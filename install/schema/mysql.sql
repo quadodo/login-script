@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `{database_prefix}users`;
 
-CREATE TABLE `users`(
+CREATE TABLE `{database_prefix}users`(
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(255) NOT NULL,
   `password` VARCHAR(40) NOT NULL,
