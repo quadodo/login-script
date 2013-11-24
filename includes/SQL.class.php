@@ -5,7 +5,7 @@
 * @start   July 18th, 2007
 * @author  Douglas Rennehan
 * @license http://www.opensource.org/licenses/gpl-license.php
-* @version 1.0.4
+* @version 1.0.5
 * @link    http://www.quadodo.net
 *** *** *** *** *** ***
 * This program is free software; you can redistribute it and/or modify
@@ -70,23 +70,11 @@ var $qls;
         $this->qls->config['sql_prefix'] = $database_prefix;
 
         // Get the actual database class
-        $database_file = ($database_type == 'MySQLi') ? 'MySQLie' : $database_type;
-        require_once($database_file . '.class.php');
+        require_once('MySQLie.class.php');
 
 		switch ($database_type) {
-			// Default is MySQL
+			// Default is MySQLi
 			default:
-			case 'MySQL':
-                // Construct the class, and add to $current_layer
-                $this->current_layer = new MySQL($database_server_name,
-                    $database_username,
-                    $database_password,
-                    $database_name,
-                    $database_persistent,
-                    $this->qls,
-                    $database_port
-                );
-                break;
 			case 'MySQLi':
                 $this->current_layer = new MySQLie($database_server_name,
                     $database_username,

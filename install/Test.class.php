@@ -5,7 +5,7 @@
 * @start   August 1st, 2007
 * @author  Douglas Rennehan
 * @license http://www.opensource.org/licenses/gpl-license.php
-* @version 1.0.5
+* @version 1.0.6
 * @link    http://www.quadodo.net
 *** *** *** *** *** ***
 * This program is free software; you can redistribute it and/or modify
@@ -49,22 +49,12 @@ var $go_back = '<br /><br />This may mean your permissions are not correct. Plea
 	 * @param string  $database_type
 	 */
 	function Test($database_server_name, $database_username, $database_password, $database_name, $database_port, $database_type) {
-    	$database_file = ($database_type == 'MySQLi') ? 'MySQLie' : $database_type;
     	// Grab the file
-    	require_once($database_file . '.class.php');
+    	require_once('MySQLie.class.php');
 
 		// Find the database type and assign to $current_layer
 		switch ($database_type) {
 			default:
-            case 'MySQL':
-                $this->current_layer = new MySQL($database_server_name,
-                    $database_username,
-                    $database_password,
-                    $database_port,
-                    $database_name,
-                    $this
-                );
-                break;
 			case 'MySQLi':
                 $this->current_layer = new MySQLie($database_server_name,
                     $database_username,

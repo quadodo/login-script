@@ -5,7 +5,7 @@
 * @start   August 3rd, 2007
 * @author  Douglas Rennehan
 * @license http://www.opensource.org/licenses/gpl-license.php
-* @version 1.1.5
+* @version 1.1.6
 * @link    http://www.quadodo.net
 *** *** *** *** *** ***
 * This program is free software; you can redistribute it and/or modify
@@ -36,7 +36,7 @@ class Install {
 /**
  * @var string $system_version - The version of the system
  */
-var $system_version = '3.1.10';
+var $system_version = '3.1.11';
 
 /**
  * @var string $install_error - Contains the installation error
@@ -54,8 +54,8 @@ var $install_error = 'There was an error with the installation! This is most lik
         header('Content-Type: text/html; charset=iso-8859-1');
 
 		// Check the version
-		if (!version_compare('5.2.0', PHP_VERSION, '<=')) {
-		    die('Minimum PHP version required to run this system is: <b>PHP 5.2.0</b>');
+		if (!version_compare('5.5.0', PHP_VERSION, '<=')) {
+		    die('Minimum PHP version required to run this system is: <b>PHP 5.5.0</b>');
 		}
 
 		if (!is_readable($this->install_directory . '/schemas/mysql.sql')) {

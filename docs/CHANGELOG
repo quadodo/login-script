@@ -5,21 +5,27 @@ ChangeLog for the Quadodo Login Script 3.1.x
 ****************************************************
 
 Contents
+    - Changes Since 3.1.10
     - Changes since 3.1.9
-	- Changes since 3.1.8
-	- Changes since 3.1.7
-	- Changes since 3.1.6
-	- Changes since 3.1.5
-	- Changes since 3.1.4
-	- Changes since 3.1.3
-	- Changes since 3.1.2
-	- Changes since 3.1.1
-	- Changes since 3.1.0
+    - Changes since 3.1.8
+    - Changes since 3.1.7
+    - Changes since 3.1.6
+    - Changes since 3.1.5
+    - Changes since 3.1.4
+    - Changes since 3.1.3
+    - Changes since 3.1.2
+    - Changes since 3.1.1
+    - Changes since 3.1.0
 
 ****************************************************
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-**Change since 3.1.9
+**Changes since 3.1.10
+
+[Fix] MySQL option removed from install, also removed from system everything uses MySQLi now by default
+[Fix] Increased minimum PHP version to PHP 5.5.0
+
+**Changes since 3.1.9
 
 [Fix] Logging in falsely will now produce an error message
 [Fix] Editing a file will now work with zero length files

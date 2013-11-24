@@ -5,7 +5,7 @@
 * @start   August 1st, 2007
 * @author  Douglas Rennehan
 * @license http://www.opensource.org/licenses/gpl-license.php
-* @version 1.1.2
+* @version 1.1.3
 * @link    http://www.quadodo.net
 *** *** *** *** *** ***
 * This program is free software; you can redistribute it and/or modify
@@ -26,8 +26,8 @@
 *** *** *** *** *** ***/
 define('IN_INSTALL', true);
 
-if (!version_compare('5.2.0', PHP_VERSION, '<=')) {
-    die('You currently have PHP version ' . PHP_VERSION . ' installed. The minimum requirement is PHP 5.2.0. Please visit the <a href="http://www.quadodo.net/s.php">support forum</a> for more information.');
+if (!version_compare('5.5.0', PHP_VERSION, '<=')) {
+    die('You currently have PHP version ' . PHP_VERSION . ' installed. The minimum requirement is PHP 5.5.0. Please visit the <a href="http://www.quadodo.net/s.php">support forum</a> for more information.');
 }
 
 // Report all errors except E_NOTICE, because it screws things up...
@@ -83,17 +83,17 @@ else {
 						<td>
 							<select name="database_type">
 <?php
-	if (extension_loaded('mysql')) {
-?>
-								<option value="MySQL"<?php if ($_SESSION['database_type'] == 'MySQL') { ?> selected="selected"<?php } ?>>MySQL</option>
-<?php
-	}
 
-	if (version_compare('5.0.0', PHP_VERSION, '<=') && extension_loaded('mysqli')) {
+	if (extension_loaded('mysqli')) {
 ?>
 								<option value="MySQLi"<?php if ($_SESSION['database_type'] == 'MySQLi') { ?> selected="selected"<?php } ?>>MySQLi</option>
 <?php
 	}
+    else {
+?>
+                                <option value="null">CONTACT SUPPORT</option>
+<?php
+    }
 ?>
 							</select>
 						</td>
